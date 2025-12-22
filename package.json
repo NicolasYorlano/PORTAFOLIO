@@ -1,0 +1,17 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./styles.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./styles.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

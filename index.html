@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Nicolás Yorlano">
+    <meta name="description" content="Mi portafolio web">
+    <meta name="keywords" content="Frontend, desarrollador web, backend, portafolio">   
+    <title>Nicolás Yorlano | portafolio</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen">
+
+    <header id="draggable-navbar" data-aos="fade-down" data-aos-duration="1000"
+        class="draggable-element bg-card/70 shadow-lg shadow-[#FF4133]/10 top-0 z-50 px-10 -md">
+        <nav class="w-full flex justify-around items-center px-4">
+            <a href="#" class="text-2xl font-bold accent-color tracking-wider">
+                &lt;Nicolás Yorlano/&gt;
+            </a>
+
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-gray-300 hover:accent-color px-3 py-2">Sobre Mí</a>
+                <a href="#skills" class="text-gray-300 hover:accent-color px-3 py-2">Habilidades</a>
+                <a href="#projects" class="text-gray-300 hover:accent-color px-3 py-2">Proyectos</a>
+                <a href="#contact" class="text-gray-300 hover:accent-color px-3 py-2">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Canvas para la animación 3D de Three.js (FIJO en el fondo) -->
+    <canvas id="hero-3d-background"></canvas>
+
+    <main class="relative z-20">
+        <!-- Sección Hero - Arrastrable -->
+        <section id="hero"
+            class="draggable-element text-center bg-card/90 shadow-2xl shadow-[#FF4133]/20 py-20 px-10 -md">
+            <div class="max-w-4xl space-y-6 mx-auto">
+                <p class="text-xl sm:text-2xl text-gray-400 font-medium py-3" data-aos="fade-down" data-aos-delay="200">
+                    ¡Hola! Soy un</p>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight py-3" data-aos="zoom-in"
+                    data-aos-delay="400">
+                    <span class="accent-color">Desarrollador Frontend</span> Creativo
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto py-3" data-aos="fade-up"
+                    data-aos-delay="600">
+                    Transformo ideas en experiencias web inmersivas y de alto rendimiento. Conoce mi trabajo y las
+                    tecnologías que manejo.
+                </p>
+                <div data-aos="fade-up" data-aos-delay="800">
+                    <a href="#projects"
+                        class="inline-block px-8 py-3 mt-4 text-lg font-semibold rounded-full accent-bg text-black hover:bg-[#D9382B] transition duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#FF4133]/50">
+                        Ver Proyectos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Mí - Arrastrable -->
+        <section id="about" class="draggable-element bg-card/90 border-y border-[#FF4133]/20 py-20 px-10 -md">
+            <div class=" max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center py-3" data-aos="fade-down">Sobre <span
+                        class="accent-color">Mí</span></h2>
+                <div class="lg:flex lg:items-center lg:space-x-12 py-3">
+                    <div class="lg:w-1/2 mb-8 lg:mb-0" data-aos="fade-right" data-aos-delay="200">
+                        <img src="./assets/580950608_18376724032144012_7949331466824271271_n.jpg"
+                            alt="Placeholder para foto de perfil"
+                            class="w-2/4 h-auto mx-auto rounded-xl shadow-2xl shadow-[#FF4133]/30 hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class=" lg:w-1/2 text-lg space-y-6 text-gray-300" data-aos="fade-left" data-aos-delay="400">
+                        <p>
+                            Mi nombre es Nicolás Yorlano y soy un apasionado desarrollador web con 1 año de experiencia,
+                            especializado en la creación de interfaces de usuario (UI) dinámicas y responsivas. Mi
+                            objetivo es fusionar la estética moderna con una funcionalidad impecable.
+                        </p>
+                        <p>
+                            Desde la maquetación con HTML y CSS, hasta la implementación de lógica compleja con React,
+                            me enfoco en la optimización del rendimiento y la accesibilidad. Me entusiasma
+                            trabajar en proyectos que desafían los límites de la interacción web.
+                        </p>
+                        <p>
+                            Fuera del código, me gusta hacer deportes, lo que me ayuda a mantener una
+                            perspectiva fresca y creativa en mis soluciones técnicas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades - Arrastrable -->
+        <section id="skills" class="draggable-element bg-card/90 py-20 px-10 -md">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center" data-aos="fade-down">Mi <span
+                        class="accent-color">Stack</span> de
+                    Habilidades</h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <div
+                        class="flex flex-col items-center p-4 rounded-lg bg-black hover:bg-[#FF4133]/20 transition duration-300 shadow-lg border border-[#FF4133]/10">
+                        <div class="flex gap-2 mb-2" data-aos="zoom-in" data-aos-delay="0">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                class="w-12 h-12 object-contain" alt="HTML5">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                class="w-12 h-12 object-contain" alt="CSS3">
+                        </div>
+                        <p class="font-semibold text-gray-200">HTML5 & CSS3</p>
+                        <small class="text-gray-400">Maquetación Semántica</small>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="100"
+                        class="flex flex-col items-center p-4 rounded-lg bg-black hover:bg-[#FF4133]/20 transition duration-300 shadow-lg border border-[#FF4133]/10">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            class="w-12 h-12 mb-2 object-contain" alt="JS">
+                        <p class="font-semibold text-gray-200">JavaScript (ES6+)</p>
+                        <small class="text-gray-400">Lógica de Aplicaciones</small>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="200"
+                        class="flex flex-col items-center p-4 rounded-lg bg-black hover:bg-[#FF4133]/20 transition duration-300 shadow-lg border border-[#FF4133]/10">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                            class="w-12 h-12 mb-2 object-contain" alt="React">
+                        <p class="font-semibold text-gray-200">React</p>
+                        <small class="text-gray-400">Librerías Frontend</small>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="300"
+                        class="flex flex-col items-center p-4 rounded-lg bg-black hover:bg-[#FF4133]/20 transition duration-300 shadow-lg border border-[#FF4133]/10">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                            class="w-12 h-12 mb-2 object-contain" alt="Tailwind CSS">
+                        <p class="font-semibold text-gray-200">Tailwind CSS</p>
+                        <small class="text-gray-400">Diseño Utilitario</small>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="400"
+                        class="flex flex-col items-center p-4 rounded-lg bg-black hover:bg-[#FF4133]/20 transition duration-300 shadow-lg border border-[#FF4133]/10">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                            class="w-12 h-12 mb-2 object-contain" alt="Node">
+                        <p class="font-semibold text-gray-200">Node.js / Express</p>
+                        <small class="text-gray-400">Backend Básico</small>
+                    </div>
+
+                    <div data-aos="zoom-in" data-aos-delay="500"
+                        class="flex flex-col items-center p-4 rounded-lg bg-black hover:bg-[#FF4133]/20 transition duration-300 shadow-lg border border-[#FF4133]/10">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                            class="w-12 h-12 mb-2 object-contain" alt="MongoDB">
+                        <p class="font-semibold text-gray-200">MongoDB</p>
+                        <small class="text-gray-400">Bases de Datos</small>
+                    </div>
+                </div>
+
+                <div class="my-10 border-t border-[#FF4133]/10"></div>
+
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-8 text-gray-400 uppercase tracking-widest" data-aos="fade-up">
+                        Otras Tecnologías /
+                        Habilidades que manejo
+                    </h3>
+                    <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+
+                        <div
+                            class="flex items-center gap-3 px-6 py-3 rounded-xl bg-black/40 border border-[#FF4133]/10 hover:bg-[#FF4133]/10 hover:border-[#FF4133]/40 transition-all duration-300 group">
+                            <img src="https://devicon-website.vercel.app/api/c/original.svg"
+                                class="w-10 h-10 object-contain group-hover:scale-110 transition-transform"
+                                alt="C"></img>
+                            <span class="text-lg font-medium text-gray-300">C</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-3 px-6 py-3 rounded-xl bg-black/40 border border-[#FF4133]/10 hover:bg-[#FF4133]/10 hover:border-[#FF4133]/40 transition-all duration-300 group">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg"
+                                class="w-10 h-10 object-contain group-hover:scale-110 transition-transform" alt="Bash">
+                            <span class="text-lg font-medium text-gray-300">Bash</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-3 px-6 py-3 rounded-xl bg-black/40 border border-[#FF4133]/10 hover:bg-[#FF4133]/10 hover:border-[#FF4133]/40 transition-all duration-300 group">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                class="w-10 h-10 object-contain group-hover:scale-110 transition-transform" alt="Git">
+                            <span class="text-lg font-medium text-gray-300">Git</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-3 px-6 py-3 rounded-xl bg-black/40 border border-[#FF4133]/10 hover:bg-[#FF4133]/10 hover:border-[#FF4133]/40 transition-all duration-300 group">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+                                class="w-10 h-10 object-contain group-hover:scale-110 transition-transform" alt="Sass">
+                            <span class="text-lg font-medium text-gray-300">Sass</span>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-3 px-6 py-3 rounded-xl bg-black/40 border border-[#FF4133]/10 hover:bg-[#FF4133]/10 hover:border-[#FF4133]/40 transition-all duration-300 group">
+                            <img src="https://devicon-website.vercel.app/api/python/original.svg"
+                                class="w-10 h-10 object-contain group-hover:scale-110 transition-transform"
+                                alt="Python"></img>
+                            <span class="text-lg font-medium text-gray-300">Python</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos - Arrastrable -->
+        <section id="projects"
+            class="draggable-element bg-card/90 border-t border-b border-[#FF4133]/20 shadow-2xl shadow-[#FF4133]/20 py-20 px-10 -md"
+            data-aos="fade-up" data-aos-duration="800">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 text-center">Mis <span class="accent-color">Proyectos</span>
+                    Recientes</h2>
+
+                <div class="flex flex-wrap justify-center gap-8">
+
+                    <div class="project-card rounded-xl p-6 bg-black w-full max-w-md hover:scale-105 transition-transform duration-300"
+                        data-aos="fade-up" data-aos-delay="100">
+
+                        <img src="./assets/capturas_de_proyectos/hamburguesasLP.png" alt="Captura de Proyecto 1"
+                            class="rounded-lg mb-4 w-full object-cover">
+
+                        <h3 class="text-2xl font-semibold mb-2 accent-color py-1">E-Commerce Hamburgueseria</h3>
+
+                        <p class="text-gray-400 mb-4">Plataforma de comercio electrónico con carrito de compras en
+                            tiempo real y pasarela de pago simulada para Hamburguesas LP.</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="text-xs font-medium px-3 py-1 rounded-full bg-red-900 text-red-200">React</span>
+                            <span class="text-xs font-medium px-3 py-1 rounded-full bg-red-900 text-red-200">Node</span>
+                            <span
+                                class="text-xs font-medium px-3 py-1 rounded-full bg-red-900 text-red-200">Express</span>
+                        </div>
+
+                        <div class="mt-4 flex space-x-4">
+                            <a href="https://proyecto-integrador-psi-ivory.vercel.app/"
+                                class="text-sm font-medium text-white hover:accent-color" target="_blank">Ver Demo
+                                &rarr;</a>
+                            <a href="https://github.com/NicolasYorlano/PROYECTO-INTEGRADOR"
+                                class="text-sm font-medium text-white hover:accent-color" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto - Arrastrable -->
+        <section id="contact" class="draggable-element bg-card/90 shadow-2xl shadow-[#FF4133]/20 py-20 px-10 -md">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6" data-aos="fade-down">¿Hablamos? <span
+                        class="accent-color">Contáctame</span></h2>
+                <p class="text-lg text-gray-300 mb-10" data-aos="fade-in" data-aos-delay="200">
+                    Estoy disponible para nuevos proyectos freelance o posiciones a tiempo completo.
+                    ¡Envíame un mensaje y creemos algo increíble juntos!
+                </p>
+                <form action="https://formspree.io/f/mrezaqav" method="POST" class=" space-y-6 max-w-lg mx-auto p-8
+                    bg-black rounded-xl shadow-2xl shadow-[#FF4133]/20" data-aos="fade-up" data-aos-delay="400">
+                    <input type="text" name="nombre" placeholder="Tu Nombre"
+                        class="w-full p-3 rounded-lg bg-card border border-gray-700 focus:border-[#FF4133] focus:ring-1 focus:ring-[#FF4133] text-white"
+                        required>
+                    <input type="email" name="email" placeholder="Tu Correo Electrónico"
+                        class="w-full p-3 rounded-lg bg-card border border-gray-700 focus:border-[#FF4133] focus:ring-1 focus:ring-[#FF4133] text-white"
+                        required>
+                    <textarea name="mensaje" placeholder="Tu Mensaje" rows="5" maxlength="200"
+                        class="w-full p-3 rounded-lg bg-card border border-gray-700 focus:border-[#FF4133] focus:ring-1 focus:ring-[#FF4133] text-white"
+                        required></textarea>
+                    <button type="submit"
+                        class="w-full p-3 rounded-lg font-semibold accent-bg text-black transition duration-300 hover:opacity-90 shadow-lg shadow-[#FF4133]/50">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer - Arrastrable -->
+    <footer id="draggable-footer"
+        class="draggable-element border-t border-gray-800 text-gray-400 text-sm bg-card/90 shadow-2xl shadow-[#FF4133]/20 px-10 -md"
+        data-aos="fade-in" data-aos-offset="0">
+        <div class="max-w-7xl mx-auto">
+            <p class="py-1">&copy; 2025 Nicolás Yorlano. Todos los derechos reservados.</p>
+            <div class="mt-2 space-x-4 py-1">
+                <a href=" https://github.com/NicolasYorlano"
+                    class="relative hover:text-white before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-[#FF4133] before:transition-all before:duration-300 hover:before:w-full"
+                    target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/nicol%C3%A1s-yorlano-28578327a/"
+                    class="relative hover:text-white before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-[#FF4133] before:transition-all before:duration-300 hover:before:w-full"
+                    target="_blank">LinkedIn</a>
+
+                <a href="https://www.instagram.com/nico_yorlano/"
+                    class="relative hover:text-white before:content-[''] before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-[#FF4133] before:transition-all before:duration-300 hover:before:w-full"
+                    target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 3. Carga de Three.js (CDN) y script principal al final del body -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
