@@ -7,6 +7,8 @@
  * @param {HTMLElement} element - El elemento DOM a hacer arrastrable.
  */
 
+let highestZ = 1000;
+
 function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
@@ -19,7 +21,8 @@ function makeDraggable(element) {
         pos3 = e.clientX;
         pos4 = e.clientY;
         
-        element.style.zIndex = '1000';
+        highestZ++;
+        element.style.zIndex = highestZ;
 
         document.onmouseup = function() {
             document.onmouseup = null;
@@ -70,6 +73,7 @@ function setupDraggables() {
         currentY += el.offsetHeight + SPACING;
 
         if (!el.hasAttribute('data-draggable-init')) {
+            el.style.cursor = 'grab';
             makeDraggable(el);
             el.setAttribute('data-draggable-init', 'true');
         }
@@ -309,3 +313,33 @@ async function handleSubmit(event) {
 
 form.addEventListener("submit", handleSubmit);
 
+// ===============================================
+// Lógica del Menú Móvil
+// ===============================================
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', (e) => {
+        // Prevenir que el click del menú interfiera con el drag de la navbar
+        e.stopPropagation(); 
+        
+        // Alternar el menú desplegable
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        }
+    });
+
+    // Cerrar el menú al hacer clic en un enlace
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+    });
+}
